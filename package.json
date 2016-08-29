@@ -25,6 +25,9 @@
     "url": "https://github.com/rexxars/mead-plugin-source-gcs/issues"
   },
   "homepage": "https://github.com/rexxars/mead-plugin-source-gcs#readme",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "dependencies": {
     "@google-cloud/storage": "^0.1.1",
     "in-publish": "^2.0.0"

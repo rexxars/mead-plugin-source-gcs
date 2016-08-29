@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "foo-bar-12313",
+  "private_key_id": "0484d1b11130008c9801b9998d062efece428ffb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\ny6HTCKzEMRqTwpyjGiD0jNdwZfy1nYes4QG8WLxByNjy2GuXTqiTdT17jd9Jr1bU\nDkkYqSZk4okWZWjUtZI9s9vbFjtQItRqoTczA8gXJGtt786LXqur5mw0Mv+urdny\nIDb37XqfaQLfF8CA2DOuY5Zu\n-----END PRIVATE KEY-----\n",
+  "client_email": "foobar-369@foo-bar-12313.iam.gserviceaccount.com",
+  "client_id": "103525803126285514140",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/foobar-369%40foo-bar-12313.iam.gserviceaccount.com"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "mead-plugin-source-gcs",
+  "version": "1.0.0",
+  "description": "Google Cloud Storage source for the Mead image transformer service",
+  "main": "src/gcsSource.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rexxars/mead-plugin-source-gcs.git"
+  },
+  "keywords": [
+    "mead-plugin",
+    "mead-source"
+  ],
+  "author": "Espen Hovlandsdal <espen@hovlandsdal.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rexxars/mead-plugin-source-gcs/issues"
+  },
+  "homepage": "https://github.com/rexxars/mead-plugin-source-gcs#readme",
+  "dependencies": {
+    "@google-cloud/storage": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "eslint-config-bengler": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "tape": "^4.6.0"
+  }
+}

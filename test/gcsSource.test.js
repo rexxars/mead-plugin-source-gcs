@@ -1,4 +1,5 @@
-/* eslint-disable id-length */
+/* eslint-disable id-length, no-sync */
+const fs = require('fs')
 const path = require('path')
 const test = require('tape')
 const plugin = require('..')
@@ -14,8 +15,18 @@ const readStream = (stream, cb) => {
 const keyFilename = path.join(__dirname, 'fixtures', 'keyFile.json')
 const credentials = require(keyFilename)
 const gcsSource = plugin.handler
-const bucket = 'bucket'
-const projectId = 'foobar'
+const bucket = 'mead-tests'
+const projectId = 'mead-141820'
+
+// Set options for integration tests
+const gcsKey = path.join(__dirname, 'fixtures', 'gcs-key.json')
+const intOpts = {skip: true}
+try {
+  fs.statSync(gcsKey)
+  intOpts.skip = false
+} catch (e) {
+  // Do nothing
+}
 
 test('has plugin props', t => {
   ['name', 'type', 'handler'].forEach(prop => {
@@ -64,4 +75,18 @@ test('returns stream that emits error on invalid credentials', t => {
       t.end()
     })
   })
+})
+
+test('returns stream that retrieves a given image', intOpts, t => {
+  const localBuf = fs.readFileSync(path.join(__dirname, 'fixtures', 'mead.png'))
+
+  gcsSource({projectId, bucket, keyFilename: gcsKey, pathPrefix: '/photos/'})
+    .getImageStream('logos/mead.png', (err, stream) => {
+      t.ifError(err, 'should not callback with error')
+      readStream(stream, (readErr, remoteBuf) => {
+        t.ifError(readErr, 'should not error on read')
+        t.equal(Buffer.compare(localBuf, remoteBuf), 0, 'Remote and local images should match')
+        t.end()
+      })
+    })
 })

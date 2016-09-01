@@ -1,6 +1,6 @@
 {
   "name": "mead-plugin-source-gcs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Google Cloud Storage source for the Mead image transformer service",
   "main": "src/gcsSource.js",
   "scripts": {

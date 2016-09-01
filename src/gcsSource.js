@@ -28,8 +28,8 @@ function gcsSource(config) {
   function getImageStream(urlPath, callback) {
     const imgPath = `${pathPrefix}/${urlPath}`.replace(/\/\//, '/').replace(/^\/+/, '')
     const stream = bucket.file(imgPath).createReadStream()
+      .once('readable', () => callback(null, stream))
       .on('error', err => callback(Boom.wrap(err, err.code, 'GCS: ')))
-      .on('readable', () => callback(null, stream))
   }
 }
 

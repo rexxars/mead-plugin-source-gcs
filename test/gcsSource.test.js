@@ -67,13 +67,10 @@ test('throws on missing projectId', t => {
   t.end()
 })
 
-test('returns stream that emits error on invalid credentials', t => {
+test('errors on invalid credentials', t => {
   gcsSource({projectId, bucket, credentials}).getImageStream('some/image.png', (err, stream) => {
-    t.ifError(err, 'should not callback with error')
-    readStream(stream, readErr => {
-      t.ok(readErr instanceof Error, 'should error')
-      t.end()
-    })
+    t.ok(err instanceof Error, 'should callback with error')
+    t.end()
   })
 })
 

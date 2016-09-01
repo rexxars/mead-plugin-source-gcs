@@ -1,3 +1,4 @@
+const Boom = require('boom')
 const storage = require('@google-cloud/storage')
 const authFields = ['type', 'project_id', 'private_key_id', 'private_key', 'client_id']
 
@@ -26,7 +27,9 @@ function gcsSource(config) {
 
   function getImageStream(urlPath, callback) {
     const imgPath = `${pathPrefix}/${urlPath}`.replace(/\/\//, '/').replace(/^\/+/, '')
-    setImmediate(callback, null, bucket.file(imgPath).createReadStream())
+    const stream = bucket.file(imgPath).createReadStream()
+      .on('error', err => callback(Boom.wrap(err, err.code, 'GCS: ')))
+      .on('readable', () => callback(null, stream))
   }
 }
 

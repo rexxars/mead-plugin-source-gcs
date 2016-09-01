@@ -25,7 +25,7 @@ function gcsSource(config) {
   return {getImageStream, requiresSignedUrls: false}
 
   function getImageStream(urlPath, callback) {
-    const imgPath = `${pathPrefix}/${urlPath}`.replace(/\/\//, '/')
+    const imgPath = `${pathPrefix}/${urlPath}`.replace(/\/\//, '/').replace(/^\/+/, '')
     setImmediate(callback, null, bucket.file(imgPath).createReadStream())
   }
 }

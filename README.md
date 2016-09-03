@@ -22,10 +22,10 @@ module.exports = {
   ],
 
   // Define a source using GCS
-  sources: [
-    {
-      name: 'my-gcs-source',
-      adapter: 'gcs',
+  sources: [{
+    name: 'my-gcs-source',
+    adapter: {
+      type: 'gcs',
       config: {
         projectId: 'some-project-123',
         pathPrefix: 'photos', // Optional
@@ -36,7 +36,7 @@ module.exports = {
         keyFilename: '/path/to/gcs-key.json'
       }
     }
-  ]
+  }]
 }
 ```
 

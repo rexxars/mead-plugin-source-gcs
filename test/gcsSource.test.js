@@ -68,7 +68,7 @@ test('throws on missing projectId', t => {
 })
 
 test('errors on invalid credentials', t => {
-  gcsSource({projectId, bucket, credentials}).getImageStream('some/image.png', (err, stream) => {
+  gcsSource({projectId, bucket, credentials}).getImageStream({urlPath: 'some/image.png'}, (err, stream) => {
     t.ok(err instanceof Error, 'should callback with error')
     t.end()
   })
@@ -78,7 +78,7 @@ test('returns stream that retrieves a given image', intOpts, t => {
   const localBuf = fs.readFileSync(path.join(__dirname, 'fixtures', 'mead.png'))
 
   gcsSource({projectId, bucket, keyFilename: gcsKey, pathPrefix: '/photos/'})
-    .getImageStream('logos/mead.png', (err, stream) => {
+    .getImageStream({urlPath: 'logos/mead.png'}, (err, stream) => {
       t.ifError(err, 'should not callback with error')
       readStream(stream, (readErr, remoteBuf) => {
         t.ifError(readErr, 'should not error on read')
@@ -90,7 +90,7 @@ test('returns stream that retrieves a given image', intOpts, t => {
 
 test('handles 404s as intended', intOpts, t => {
   gcsSource({projectId, bucket, keyFilename: gcsKey})
-    .getImageStream('photos/logos/nonexistant.png', err => {
+    .getImageStream({urlPath: 'photos/logos/nonexistant.png'}, err => {
       t.ok(err instanceof Error, 'should error')
       t.true(err.isBoom, 'should be boom error')
       t.equal(err.output.statusCode, 404, 'status code should be 404')

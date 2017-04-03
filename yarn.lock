@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@google-cloud/common@^0.12.0":
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/@google-cloud/common/-/common-0.12.2.tgz#78c344288c4605a29f4c2899391759d7dc817c43"
+"@google-cloud/common@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/common/-/common-0.13.0.tgz#d062439a75b38eb76c4704d20f5b45301a69f17f"
   dependencies:
     array-uniq "^1.0.3"
     arrify "^1.0.1"
@@ -13,7 +13,7 @@
     duplexify "^3.5.0"
     ent "^2.2.0"
     extend "^3.0.0"
-    google-auto-auth "^0.5.2"
+    google-auto-auth "^0.6.0"
     is "^3.2.0"
     log-driver "^1.2.5"
     methmeth "^1.1.0"
@@ -25,11 +25,11 @@
     string-format-obj "^1.1.0"
     through2 "^2.0.3"
 
-"@google-cloud/storage@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-0.7.0.tgz#87eb7bde35a1597511cba7b651e666178ac90fe1"
+"@google-cloud/storage@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-1.0.0.tgz#cb6af3d8ce89a2e5b394adf2e5fa2bf83f36b2fd"
   dependencies:
-    "@google-cloud/common" "^0.12.0"
+    "@google-cloud/common" "^0.13.0"
     arrify "^1.0.0"
     async "^2.0.1"
     concat-stream "^1.5.0"
@@ -169,7 +169,7 @@ balanced-match@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
 
-base64url@^2.0.0:
+base64url@2.0.0, base64url@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/base64url/-/base64url-2.0.0.tgz#eac16e03ea1438eff9423d69baa36262ed1f70bb"
 
@@ -202,9 +202,9 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-boom@^4.0.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/boom/-/boom-4.2.0.tgz#c1a74174b11fbba223f6162d4fd8851a1b82a536"
+boom@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-4.3.1.tgz#4f8a3005cb4a7e3889f749030fd25b96e01d2e31"
   dependencies:
     hoek "4.x.x"
 
@@ -215,7 +215,7 @@ brace-expansion@^1.0.0:
     balanced-match "^0.4.1"
     concat-map "0.0.1"
 
-buffer-equal-constant-time@^1.0.1:
+buffer-equal-constant-time@1.0.1, buffer-equal-constant-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
 
@@ -323,7 +323,7 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-concat-stream@^1.4.6, concat-stream@^1.4.7, concat-stream@^1.5.0, concat-stream@^1.6.0:
+concat-stream@^1.4.7, concat-stream@^1.5.0, concat-stream@^1.5.2, concat-stream@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.0.tgz#0aac662fd52be78964d5532f694784e70110acf7"
   dependencies:
@@ -433,9 +433,9 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
 
-doctrine@^1.2.2:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-1.5.0.tgz#379dce730f6166f76cefa4e6707a159b02c5a6fa"
+doctrine@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.0.tgz#c73d8d2909d22291e1a007a395804da8b665fe63"
   dependencies:
     esutils "^2.0.2"
     isarray "^1.0.0"
@@ -455,7 +455,7 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
-ecdsa-sig-formatter@^1.0.0:
+ecdsa-sig-formatter@1.0.9, ecdsa-sig-formatter@^1.0.0:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.9.tgz#4bc926274ec3b5abb5016e7e1d60921ac262b2a1"
   dependencies:
@@ -571,21 +571,22 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-bengler@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-bengler/-/eslint-config-bengler-3.1.2.tgz#2f78df60c33b0291ce635dc701c2de15f3a2f6fd"
+eslint-config-bengler@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-bengler/-/eslint-config-bengler-3.1.4.tgz#ea8ab4f41d4f984c261b2338e8780aa989c4b0bf"
 
-eslint@^3.4.0:
-  version "3.17.1"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.17.1.tgz#b80ae12d9c406d858406fccda627afce33ea10ea"
+eslint@^3.19.0:
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.19.0.tgz#c8fc6201c7f40dd08941b87c085767386a679acc"
   dependencies:
     babel-code-frame "^6.16.0"
     chalk "^1.1.3"
-    concat-stream "^1.4.6"
+    concat-stream "^1.5.2"
     debug "^2.1.1"
-    doctrine "^1.2.2"
+    doctrine "^2.0.0"
     escope "^3.6.0"
     espree "^3.4.0"
+    esquery "^1.0.0"
     estraverse "^4.2.0"
     esutils "^2.0.2"
     file-entry-cache "^2.0.0"
@@ -629,6 +630,12 @@ esprima@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
 
+esquery@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.0.0.tgz#cfba8b57d7fba93f17298a8a006a04cda13d80fa"
+  dependencies:
+    estraverse "^4.0.0"
+
 esrecurse@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/esrecurse/-/esrecurse-4.1.0.tgz#4713b6536adf7f2ac4f327d559e7756bff648220"
@@ -640,7 +647,7 @@ estraverse@^1.9.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-1.9.3.tgz#af67f2dc922582415950926091a4005d29c9bb44"
 
-estraverse@^4.1.1, estraverse@^4.2.0:
+estraverse@^4.0.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
@@ -736,6 +743,13 @@ function-bind@^1.0.2, function-bind@^1.1.0, function-bind@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
+gcp-metadata@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/gcp-metadata/-/gcp-metadata-0.1.0.tgz#abe21f1ea324dd0b34a3f06ca81763fb1eee37d9"
+  dependencies:
+    extend "^3.0.0"
+    retry-request "^1.3.2"
+
 gcs-resumable-upload@^0.7.1:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/gcs-resumable-upload/-/gcs-resumable-upload-0.7.4.tgz#6633967badf7a4aed2d79337e7badfe889cfd617"
@@ -804,7 +818,16 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-google-auth-library@^0.9.10, google-auth-library@^0.9.6:
+google-auth-library@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-0.10.0.tgz#6e15babee85fd1dd14d8d128a295b6838d52136e"
+  dependencies:
+    gtoken "^1.2.1"
+    jws "^3.1.4"
+    lodash.noop "^3.0.1"
+    request "^2.74.0"
+
+google-auth-library@^0.9.6:
   version "0.9.10"
   resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-0.9.10.tgz#4993dc07bb4834b8ca0350213a6873a32c6051b9"
   dependencies:
@@ -822,12 +845,13 @@ google-auto-auth@^0.2.1:
     google-auth-library "^0.9.6"
     object-assign "^3.0.0"
 
-google-auto-auth@^0.5.2:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/google-auto-auth/-/google-auto-auth-0.5.3.tgz#a6d8fdb9ace4658decf93a4fae3795282a52d9e1"
+google-auto-auth@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/google-auto-auth/-/google-auto-auth-0.6.0.tgz#ad76656293d8d06b3c89c358becd29947d4510a8"
   dependencies:
     async "^2.1.2"
-    google-auth-library "^0.9.10"
+    gcp-metadata "^0.1.0"
+    google-auth-library "^0.10.0"
     object-assign "^3.0.0"
     request "^2.79.0"
 
@@ -845,7 +869,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
-gtoken@^1.1.0:
+gtoken@^1.1.0, gtoken@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/gtoken/-/gtoken-1.2.2.tgz#172776a1a9d96ac09fc22a00f5be83cee6de8820"
   dependencies:
@@ -1160,6 +1184,15 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
+jwa@^1.1.4:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/jwa/-/jwa-1.1.5.tgz#a0552ce0220742cd52e153774a32905c30e756e5"
+  dependencies:
+    base64url "2.0.0"
+    buffer-equal-constant-time "1.0.1"
+    ecdsa-sig-formatter "1.0.9"
+    safe-buffer "^5.0.1"
+
 jwa@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/jwa/-/jwa-1.0.2.tgz#fd79609f1e772e299dce8ddb76d00659dd83511f"
@@ -1174,6 +1207,14 @@ jws@^3.0.0, jws@~3.0.0:
   dependencies:
     base64url "~1.0.4"
     jwa "~1.0.0"
+
+jws@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/jws/-/jws-3.1.4.tgz#f9e8b9338e8a847277d6444b1464f61880e050a2"
+  dependencies:
+    base64url "^2.0.0"
+    jwa "^1.1.4"
+    safe-buffer "^5.0.1"
 
 kind-of@^3.0.2:
   version "3.1.0"
@@ -1192,7 +1233,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lodash.noop@~3.0.0:
+lodash.noop@^3.0.1, lodash.noop@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash.noop/-/lodash.noop-3.0.1.tgz#38188f4d650a3a474258439b96ec45b32617133c"
 
@@ -1543,7 +1584,7 @@ request@2.76.0:
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
-request@^2.61.0, request@^2.72.0, request@^2.79.0:
+request@^2.61.0, request@^2.72.0, request@^2.74.0, request@^2.79.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:

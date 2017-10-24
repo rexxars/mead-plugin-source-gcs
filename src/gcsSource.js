@@ -1,18 +1,17 @@
 const Boom = require('boom')
 const storage = require('@google-cloud/storage')
 const authFields = ['type', 'project_id', 'private_key_id', 'private_key', 'client_id']
+const requiredProps = ['bucket', 'projectId']
 
 function gcsSource(config) {
   const {keyFilename, credentials, projectId} = config
   const pathPrefix = (config.pathPrefix || '').replace(/^\/|\/$/g, '')
 
   if (!keyFilename && !hasAuthFields(credentials)) {
-    throw new Error(
-      'GCS sources need either a `keyFilename` or a `credentials` object'
-    )
+    throw new Error('GCS sources need either a `keyFilename` or a `credentials` object')
   }
 
-  ['bucket', 'projectId'].forEach(prop => {
+  requiredProps.forEach(prop => {
     if (!config[prop]) {
       throw new Error(`GCS sources need a \`${prop}\` property`)
     }
@@ -28,7 +27,9 @@ function gcsSource(config) {
   function getImageStream(context, callback) {
     const urlPath = context.urlPath
     const imgPath = `${pathPrefix}/${urlPath}`.replace(/\/\//, '/').replace(/^\/+/, '')
-    const stream = bucket.file(imgPath).createReadStream()
+    const stream = bucket
+      .file(imgPath)
+      .createReadStream({validation: false})
       .once('readable', () => callback(null, stream))
       .on('error', err => callback(Boom.wrap(err, codeToNum(err.code), 'GCS')))
   }
